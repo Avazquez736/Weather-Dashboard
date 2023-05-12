@@ -3,4 +3,8 @@ h1{
     background-color: rgb(85, 149, 170);
     color: white;
 }
-
+label {
+	margin-top: 10px;
+	font-weight: bold;
+	font-size: 20px;
+}

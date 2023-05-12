@@ -8,35 +8,39 @@
     <title>Weather Dashboard</title>
   </head>
   <body>
-     <h1>Weather Dashboard</h1>
-     <div class="container-fluid mainCon">
+    <h1>Weather Dashboard</h1>
+    <div class="container-fluid">
       <div class="row">
-        <div class="col-12">
-          <span class="label">Search For a City</span>
+        <div class="col-12 col-md-2 col-xl-2">
+          <label>Search for a City:</label>
+
           <div class="input-group mb-3">
-            <input type="text" class="form-control textVal" id="inputGroup-sizing-lg" placeholder="City">
+            <input type="text" class="form-control textVal" placeholder="">
             <div class="input-group-append btnPar">
               <button class="btn btn-primary search" type="button" id="button-addon2"><i class="fas fa-search"></i></button>
             </div>
           </div>
-          </div>
 
-      <div class="col-12 col-md-8 col-xl-8 col">
-
-         
-      
-        <div class="row todays">
-
-          <div class="card" style="width: 18rem;">
-            <h2 class="cardHeader cardCity"></h2>
-            <h3 class="cardHeader cardDate"></h3>
-            <img class="icons"/>
-           <div class="card-body todayBodyCard">
-           </div>
-          </div>
+          <div class="container cityList"></div>
 
         </div>
-     </div>
+        <div class="col-12 col-md-9 col-xl-9 colTwo">
+
+          <div class="row today">
+
+            <div class="card bg-light mb-3 " style="max-width: 400px;">
+              <h2 class="card-header cardTodayCityName"></h2>
+              <h3 class="card-header cardTodayDate"></h3>
+              <img class="icons"/>
+              <div class="card-body cardBodyToday">
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row fiveDayForecast"></div>
+
+        </div>
 							
     
    

@@ -1,14 +1,9 @@
-let key = 'cef775ad585cc9e589a2e29c31974382';
+var key = 'fe6df37955ad832773c369dfa58e7598';
+var city = "Denver"
+
+//Grabs the current time and date
+var date = dayjs().format('dddd, MMMM Do YYYY');
+var dateTime = dayjs().format('YYYY-MM-DD HH:MM:SS')
 
 
-let date = dayjs().format('dddd, MMMM YYYY');
-let time = dayjs().format('HH:MM:ss A')
 
-console.log(time)
-console.log(date)
-
-var todayBodyCard = $('.todayBodyCard')
-
-function getWeather(){
-
-}
