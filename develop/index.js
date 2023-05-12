@@ -47,7 +47,6 @@ function renderCities() {
       console.log(li);
       cityList.prepend(li);
     }
-    //Get Response weather for the first city only
     if (!city){
         return
     } 
@@ -55,3 +54,4 @@ function renderCities() {
         getResponseWeather(city)
     };
 } 
+
