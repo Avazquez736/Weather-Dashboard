@@ -94,10 +94,8 @@ function getResponseWeather(cityName){
       clear.append(cityHum);
       
     var CoordLongitude = response.coord.lon;
-    var CoordLatitude = response.coord.lat;
-    
-        //Api to get 5-day forecast  
-        var queryURL3 = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=" + key;
+    var CoordLatitude = response.coord.lat; 
+	var queryURL3 = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=" + key;
            
       
 
