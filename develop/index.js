@@ -13,30 +13,17 @@ function currentDay(date){
 }
 
 
-function storeCities(){
+function logCities(){
   localStorage.setItem("cities", JSON.stringify(cities));
   console.log(localStorage);
 }
 
-function init(){
-    let storedCities = JSON.parse(localStorage.getItem("cities"));
 
-    if (storedCities !== null) {
-        cities = storedCities;
-      }
 
-    renderCities();
-}
-
-init();
-
-function renderCities() {
-    // Clear cityList element
-    // cityList.text = "";
-    // cityList.HTML = "";
+function cityCreate() {
+  
     cityList.empty();
     
-    // Render a new li for each city
     for (let i = 0; i < cities.length; i++) {
       var city = cities[i];
       
@@ -55,3 +42,32 @@ function renderCities() {
     };
 } 
 
+$("#add-city").on("click", function(event){
+	event.preventDefault();
+
+  // This line will grab the city from the input box
+  var city = $("#city-search").val().trim();
+  
+  // Return from function early if submitted city is blank
+  if (city === "") {
+	  return;
+  }
+  //Adding city-input to the city array
+  cities.push(city);
+  // Store updated cities in localStorage, re-render the list
+logCities();
+cityCreate();
+});
+
+
+function init(){
+    let storedCities = JSON.parse(localStorage.getItem("cities"));
+
+    if (storedCities !== null) {
+        cities = storedCities;
+      }
+
+    cityCreate();
+}
+
+init();
