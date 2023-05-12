@@ -2,6 +2,7 @@ let key = "fe6df37955ad832773c369dfa58e7598";
 let cityList =$("#city-list");
 let cities = [];
 
+
 function currentDay(date){
     var date = new Date();
     let month = date.getMonth()+1;
@@ -71,3 +72,35 @@ function init(){
 }
 
 init();
+
+
+function getResponseWeather(cityName){
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" +cityName+ "&appid=" + key; 
+  	
+    var clear = $("#today-weather").empty();
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function(response) {
+        
+      cityTitle = $("<h4>").text(response.name + " "+ currentDay());
+      clear.append(cityTitle);
+      var tempNum = parseInt((response.main.temp)* 9/5 - 459);
+      var cityTemp = $("<p>").text("Tempeture: "+ tempNum + " °F");
+      clear.append(cityTemp);
+      var cityWS = $("<p>").text("Wind: "+ response.wind.speed + " MPH");
+      clear.append(cityWS);
+	  var cityHum = $("<p>").text("Humidity: "+ response.main.humidity + " %");
+      clear.append(cityHum);
+      
+    var CoordLongitude = response.coord.lon;
+    var CoordLatitude = response.coord.lat;
+    
+        //Api to get 5-day forecast  
+        var queryURL3 = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=" + key;
+           
+      
+
+    });
+    
+  }
